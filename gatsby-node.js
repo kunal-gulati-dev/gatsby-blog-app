@@ -1,4 +1,4 @@
-const path = require("path")
+const path = require(`path`)
 
 exports.createPages = async ({ graphql, actions }) => {
 
@@ -51,7 +51,7 @@ exports.createPages = async ({ graphql, actions }) => {
     (element, index) => {
       createPage({
         path: `/blog/${element.slug.current}`,
-        component: path.resolve("./src/templates/BlogDetailTemplate.js"),
+        component: path.resolve(`./src/templates/BlogDetailTemplate.js`),
         context: {
           blog: element
         }
