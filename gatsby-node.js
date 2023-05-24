@@ -62,7 +62,6 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  console.log('data aya backed se ===', result.data.allSanityBlog.nodes)
 
   // Handle errors if any
   if (result.errors) {

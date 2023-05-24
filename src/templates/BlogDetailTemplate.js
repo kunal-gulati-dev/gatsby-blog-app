@@ -13,7 +13,6 @@ import {format} from "date-fns";
 
 
 const BlogDetail = ({ pageContext }) => {
-  console.log('page context ===', pageContext.blog)
 
   const query = graphql`
     query {
