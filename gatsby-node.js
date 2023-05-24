@@ -1,27 +1,4 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/
- */
-
-/**
- * @type {import('gatsby').GatsbyNode['createPages']}
- */
-const { createFilePath } = require("gatsby-source-filesystem")
 const path = require("path")
-
-
-
-// exports.createPages = async ({ actions }) => {
-//   const { createPage } = actions
-//   createPage({
-//     path: "/BlogDetailTemplate/",
-//     component: require.resolve("./src/templates/BlogDetailTemplate.js"),
-//     context: {},
-//     defer: true,
-//   })
-// }
-
 
 exports.createPages = async ({ graphql, actions }) => {
 
