@@ -252,7 +252,7 @@ pre tt:after {
 
 @font-face {
   font-family: "sfprodisplay";
-  src: url("../fonts/sfprodisplayregular.otf") format("opentype")
+  src: url("../fonts/SFPRODISPLAYREGULAR.OTF") format("opentype")
 }
 
 body {
@@ -305,7 +305,7 @@ picture {
 }
 
 .main-blog-image-container {
-  width: 854px;
+  max-width: 854px;
   height: 533px;
 
 }
