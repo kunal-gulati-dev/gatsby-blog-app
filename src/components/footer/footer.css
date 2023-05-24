@@ -1,0 +1,94 @@
+/* Footer Section */
+
+
+.footer-section {
+    background-color: #000;
+    width: 100%;
+    color: #fff;
+}
+
+.product-marquee{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.product-work {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: "sfprodisplay", sans-serif;
+}
+
+.product-work strong {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: "sfprodisplay", sans-serif;
+}
+
+.main-footer {
+    margin-top: 50px;
+    padding: 20px;
+}
+
+
+.footer-image-container {
+    margin-inline: auto;
+    max-width: 290px;
+    margin-bottom: 30px;
+}
+
+.footer-description {
+    max-width: 488px;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    padding-inline: 20px;
+    margin-inline: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-family: "newyorksmall400", sans-serif;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+
+.social-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 170%;
+    text-decoration-line: underline;
+    font-family: "sfprodisplay", sans-serif;
+}
+
+
+.copyright {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyright p {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 140%;
+    text-align: center;
+    font-family: "sfprodisplay", sans-serif;
+}
