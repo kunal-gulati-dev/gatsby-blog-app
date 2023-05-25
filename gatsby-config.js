@@ -35,9 +35,10 @@ module.exports = {
       options: {
         projectId: `l8nb5yul`,
         dataset: `production`,
-        token:
-          `skVjPhi2COCEmvPB15RO63cjvaTRPkopSwWHjmdBjAsoD7agxrVRCGBCpIrOyJ1hEgUvrSy4a0bUymKsJAO1qKpH33DCA7TceZZA1YAA7t7auBhzwMigWUm8I9IVm3c4ujh9W8qVRohVYh8eEpbrmYqCvZjDjrk0ZEQpNUKYBfbTgKYaftIP`,
+        token: `skVjPhi2COCEmvPB15RO63cjvaTRPkopSwWHjmdBjAsoD7agxrVRCGBCpIrOyJ1hEgUvrSy4a0bUymKsJAO1qKpH33DCA7TceZZA1YAA7t7auBhzwMigWUm8I9IVm3c4ujh9W8qVRohVYh8eEpbrmYqCvZjDjrk0ZEQpNUKYBfbTgKYaftIP`,
         endpoint: `https://l8nb5yul.api.sanity.io/v1/graphql/production/default`,
+        watchMode: true,
+        overlayDrafts: true,
       },
     },
   ],
