@@ -40,6 +40,7 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
 
 
+
   // Handle errors if any
   if (result.errors) {
     throw result.errors

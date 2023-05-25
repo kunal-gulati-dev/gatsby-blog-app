@@ -13,7 +13,7 @@ const IndexPage = () => {
 
   const query = graphql`
     query {
-      allSanityBlog {
+      allSanityBlog(sort: { publishedAt: DESC }) {
         nodes {
           id
           title
@@ -34,10 +34,6 @@ const IndexPage = () => {
   const data = useStaticQuery(query)
 
   const blogs = data.allSanityBlog.nodes
-
-  
-
-
   return (
     <Layout>
       <div className="main">
