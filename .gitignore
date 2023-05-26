@@ -96,4 +96,4 @@ yarn-error.log
 # Dotenv and similar local-only files
 ./blog-backend/*.local
 
-./blog-backend
+blog-backend

@@ -46,12 +46,14 @@ const BlogDetail = ({ pageContext }) => {
     content,
     slug,
     _rawContent,
+    metatitle,
+    metadescription
   } = pageContext.blog
-
 
   const data = useStaticQuery(query)
 
   const blogs = data.allSanityBlog.nodes
+
   
 
   const relatedBlogs = blogs.filter(blog => {
@@ -73,8 +75,11 @@ const BlogDetail = ({ pageContext }) => {
     },
   }
 
+  console.log("meta title ==", metatitle)
+  console.log("meta description ==", metadescription)
+
   return (
-    <Layout>
+    <Layout metaTitle={metatitle} metaDescription={metadescription}>
       <div className="blog-detail-section">
         <div className="blog-container">
           <h2 className="bl-heading">{title}</h2>
@@ -101,7 +106,8 @@ const BlogDetail = ({ pageContext }) => {
                 <div className="date-detail">
                   <p className="author-name">{author}</p>
                   <p className="date-published">
-                    {format(new Date(publishedAt), "MMM dd yyyy")} ·<span> {readtime}</span>
+                    {format(new Date(publishedAt), "MMM dd yyyy")} ·
+                    <span> {readtime}</span>
                   </p>
                 </div>
               </div>
@@ -124,73 +130,7 @@ const BlogDetail = ({ pageContext }) => {
             </div>
             <div className="blog-description-container">
               <BlockContent blocks={_rawContent} serializers={serializers} />
-              {/* <p className="blog-detail-para">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu
-                velit tempus erat egestas efficitur. In hac habitasse platea
-                dictumst. Fusce a nunc eget ligula suscipit finibus. Aenean
-                pharetra quis lacus at viverra.
-                <br />
-                <br />
-                Class aptent taciti sociosqu ad litora torquent per conubia
-                nostra, per inceptos himenaeos. Aliquam quis posuere ligula. In
-                eu dui molestie, molestie lectus eu, semper lectus.
-              </p>
-              <h4 className="detail-heading">Next on the pipeline</h4>
-              <p className="blog-detail-para">
-                Duis eu velit tempus erat egestas efficitur. In hac habitasse
-                platea dictumst. Fusce a nunc eget ligula suscipit finibus.
-                Aenean pharetra quis lacus at viverra. Class aptent taciti
-                sociosqu ad litora torquent per conubia nostra, per inceptos
-                himenaeos.
-                <br />
-                <br />
-                Morbi efficitur auctor metus, id mollis lorem pellentesque id.
-                Nullam posuere maximus dui et fringilla.
-              </p>
-              <div className="blog-detail-image-container">
-                <img
-                  src={blogDetailImage}
-                  alt=""
-                  className="blog-detail-image"
-                />
-              </div>
-              <p className="blog-detail-para">
-                Aenean pharetra quis lacus at viverra. Class aptent taciti
-                sociosqu ad litora torquent per conubia nostra, per inceptos
-                himenaeos. Aliquam quis posuere ligula.
-                <br />
-                <br />
-                In eu dui molestie, molestie lectus eu, semper lectus. Proin at
-                justo lacinia, auctor nisl et, consequat ante. Donec sit amet
-                nisi arcu. Morbi efficitur auctor metus, id mollis lorem
-                pellentesque id. Nullam posuere maximus dui et fringilla. Nulla
-                non volutpat leo.
-              </p>
-              <br />
-              <br />
-              <p className="blog-detail-para">A list looks like this:</p>
-              <ul>
-                <li>First item in the list </li>
-                <li>
-                  Second item in the list lorem ipsum dolor sit amet nunc felis
-                  dolor lorem ipsum sit amet
-                </li>
-                <li>Third item in the list</li>
-              </ul>
-              <p className="blog-detail-para">
-                Class aptent taciti sociosqu ad litora torquent per conubia
-                nostra, per inceptos himenaeos. Aliquam quis posuere ligula.
-              </p>
-              <br />
-              <br />
 
-              <p className="blog-detail-para">
-                Thanks for reading,
-                <br />
-                Mika
-              </p> */}
-              {/* <BlockContent blocks={pageContext.blog._rawContent} /> */}
-              {/* <ReactMarkdown>{_rawContent}</ReactMarkdown> */}
               <div className="social-icons-container">
                 <button className="social-button">
                   <img src={facebookIcon} alt="" />
@@ -248,61 +188,6 @@ const BlogDetail = ({ pageContext }) => {
                 </Link>
               )
             })}
-
-            {/* <div className="blog-item">
-              <div className="blog-item-image-container">
-                <img src={img1} alt="" className="blog-item-image" />
-              </div>
-              <h4 className="blog-item-heading">
-                Here are some things you should know regarding how we work
-              </h4>
-            </div>
-
-            <div className="blog-item">
-              <div className="blog-item-image-container">
-                <img src={img2} alt="" className="blog-item-image" />
-              </div>
-              <h4 className="blog-item-heading">
-                Granny gives everyone the finger, and other tips from OFFF
-                Barcelona
-              </h4>
-            </div>
-
-            <div className="blog-item">
-              <div className="blog-item-image-container">
-                <img src={img3} alt="" className="blog-item-image" />
-              </div>
-              <h4 className="blog-item-heading">
-                Hello world, or, in other words, why this blog exists
-              </h4>
-            </div>
-
-            <div className="blog-item">
-              <div className="blog-item-image-container">
-                <img src={img4} alt="" className="blog-item-image" />
-              </div>
-              <h4 className="blog-item-heading">
-                Here are some things you should know regarding how we work
-              </h4>
-            </div>
-
-            <div className="blog-item">
-              <div className="blog-item-image-container">
-                <img src={img5} alt="" className="blog-item-image" />
-              </div>
-              <h4 className="blog-item-heading">
-                Connecting artificial intelligence with digital product design
-              </h4>
-            </div>
-
-            <div className="blog-item">
-              <div className="blog-item-image-container">
-                <img src={img6} alt="" className="blog-item-image" />
-              </div>
-              <h4 className="blog-item-heading">
-                It’s all about finding the perfect balance
-              </h4>
-            </div> */}
           </div>
         </div>
 
@@ -327,5 +212,9 @@ const BlogDetail = ({ pageContext }) => {
     </Layout>
   )
 }
+
+
+// export const Head = () => <Seo title={metatitle} description={metadescription} />
+
 
 export default BlogDetail

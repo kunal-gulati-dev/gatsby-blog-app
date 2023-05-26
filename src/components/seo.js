@@ -52,8 +52,11 @@ function Seo({ description, title, children }) {
       <meta name="twitter:creator" content={site.siteMetadata?.author || ``} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} /> */}
-      <title>{defaultTitle}</title>
-      <meta name="description" content={metaDescription} />
+      <title>{title ? title : defaultTitle}</title>
+      <meta
+        name="description"
+        content={description ? description : metaDescription}
+      />
       <meta property="og:title" content={defaultTitle} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content="website" />

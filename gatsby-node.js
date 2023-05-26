@@ -34,6 +34,8 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
           _rawContent
+          metadescription
+          metatitle
         }
       }
     }
@@ -54,7 +56,7 @@ exports.createPages = async ({ graphql, actions }) => {
         path: `/blog/${element.slug.current}`,
         component: path.resolve(`./src/templates/BlogDetailTemplate.js`),
         context: {
-          blog: element
+          blog: element,
         }
       })
     }

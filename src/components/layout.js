@@ -11,10 +11,11 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import Footer from "./footer/Footer"
 import "./layout.css"
+import { Helmet } from "react-helmet"
 
 
 
-const Layout = ({ children }) => {
+const Layout = ({ children, metaTitle, metaDescription }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -24,9 +25,18 @@ const Layout = ({ children }) => {
       }
     }
   `)
+  console.log(metaTitle, metaDescription)
 
   return (
     <>
+      <Helmet>
+        <title>{metaTitle}</title>
+        <meta
+          name="description"
+          content={metaDescription}
+          data-gatsby-head="true"
+        ></meta>
+      </Helmet>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div>
         <main>{children}</main>
